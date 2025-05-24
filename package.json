@@ -1,0 +1,22 @@
+{
+  "name": "repo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "mainPage.Spec.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NameIsJoxter/playwrightTest.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NameIsJoxter/playwrightTest/issues"
+  },
+  "homepage": "https://github.com/NameIsJoxter/playwrightTest#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.52.0",
+    "@types/node": "^22.15.21"
+  }
+}
