@@ -2,10 +2,9 @@ import { test, expect } from '@playwright/test';
 
 test.describe('Тесты главной страницы', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('playwright.dev/');
+    await page.goto('https://playwright.dev/');
   });
   test('Проверка отображения элементов навигации хэдера', async ({ page }) => {
-    await page.goto('https://playwright.dev/');
     await expect(page.getByRole('link', { name: 'Playwright logo Playwright' })).toBeVisible();
     await expect(page.getByRole('link', { name: 'Docs' })).toBeVisible();
     await expect(page.getByRole('link', { name: 'API' })).toBeVisible();
@@ -18,8 +17,6 @@ test.describe('Тесты главной страницы', () => {
   });
 
   test('Проверка названий элементов навигации хэдера', async ({ page }) => {
-    await page.goto('https://playwright.dev/');
-
     await expect(page.getByRole('link', { name: 'Docs' })).toContainText('Docs');
     await expect(page.getByRole('link', { name: 'API' })).toContainText('API');
     await expect(page.getByRole('button', { name: 'Node.js' })).toContainText('Node.js');
@@ -27,7 +24,6 @@ test.describe('Тесты главной страницы', () => {
   });
 
   test('Проверка атрибута  href  в элементах навигации хедера', async ({ page }) => {
-    await page.goto('https://playwright.dev/');
     await expect(page.getByRole('link', { name: 'Playwright logo Playwright' })).toHaveAttribute(
       'href',
       '/',
@@ -52,7 +48,6 @@ test.describe('Тесты главной страницы', () => {
   });
 
   test('Проверка переключения лайт-мода', async ({ page }) => {
-    await page.goto('https://playwright.dev/');
     await page.getByRole('button', { name: 'Switch between dark and light' }).click();
     await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
     await page.getByRole('button', { name: 'Switch between dark and light' }).click();
@@ -60,7 +55,6 @@ test.describe('Тесты главной страницы', () => {
   });
 
   test('Проверка заголовка', async ({ page }) => {
-    await page.goto('https://playwright.dev/');
     await expect(page.getByRole('heading', { name: 'Playwright enables reliable' })).toBeVisible();
     await expect(page.getByRole('heading', { name: 'Playwright enables reliable' })).toContainText(
       'Playwright enables reliable end-to-end testing for modern web apps.',
@@ -68,7 +62,6 @@ test.describe('Тесты главной страницы', () => {
   });
 
   test('Проверка кнопки GetStarted', async ({ page }) => {
-    await page.goto('https://playwright.dev/');
     await expect.soft(page.getByRole('link', { name: 'Get started' })).toBeVisible();
     await expect.soft(page.getByRole('link', { name: 'Get started' })).toContainText('Get started');
     await expect(page.getByRole('link', { name: 'Get started' })).toHaveAttribute(
